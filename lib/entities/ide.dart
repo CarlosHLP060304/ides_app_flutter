@@ -1,7 +1,7 @@
 class Ide{
-  String nome;
-  String descricao;
+  String name;
+  String description;
   String link;
-  String imagem;
-  Ide({required this.nome,required this.descricao,required this.link,required this.imagem});
+  String image;
+  Ide({required this.name,required this.description,required this.link,required this.image});
 }

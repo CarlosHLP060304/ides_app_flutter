@@ -1,5 +1,7 @@
 
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailsScreen extends StatelessWidget {
   Map ide;
@@ -17,11 +19,14 @@ class DetailsScreen extends StatelessWidget {
           children: [
             Image.asset(ide["imagem"]),
             Text(ide["descricao"]),
-            Padding(
-              padding: const EdgeInsets.only(top: 2.0),
+            const Padding(
+              padding: EdgeInsets.only(top: 2.0),
               child: Text("Para saber mais, acesse o link",),
             ),
-            Text(ide["link"],style: TextStyle(color: Colors.blue),)
+            InkWell(
+              child: Text(ide["link"],style: const TextStyle(color: Colors.blue),),
+              onTap: () => launchUrl(Uri.parse(ide["link"])) ,
+            )
           ],
         ),
       ),
